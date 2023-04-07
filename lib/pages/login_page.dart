@@ -58,7 +58,20 @@ class LoginPage extends StatelessWidget {
                   height: 15,
                 ),
 
-                Container()
+                // Şifrenizi mi unuttunuz?
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: const [
+                       Text(
+                        'Şifrenizi mi unuttunuz?',
+                        style: TextStyle(color:AppColors.blue, fontWeight: FontWeight.w600),
+                      ),
+                    ],
+                  ),
+                ),
+
               ],
             ),
           ),
