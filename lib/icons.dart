@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
+import 'colors.dart';
 
 class MyIcons extends StatefulWidget {
   const MyIcons({super.key});
@@ -14,10 +15,10 @@ class _MyIconsState extends State<MyIcons> {
     return const Padding(
       padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 20),
       child: GNav(
-        backgroundColor: Color.fromARGB(255, 141, 139, 139),
+        backgroundColor: AppColors.blue,
         color: Colors.white,
         activeColor: Colors.white,
-        tabBackgroundColor: Color.fromARGB(255, 108, 198, 239),
+        tabBackgroundColor: AppColors.green,
         gap: 10,
         //onTabChange: (){ 'sayfadan sayfaya gitme degisikligi yapilacak yer '}
 

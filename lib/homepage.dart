@@ -1,6 +1,7 @@
 import 'package:app_jam/square.dart';
 import 'package:flutter/material.dart';
 import 'icons.dart';
+import 'colors.dart';
 
 class HomePage extends StatelessWidget {
   //const HomePage({super.key});
@@ -17,14 +18,22 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color.fromARGB(255, 141, 139, 139),
+        backgroundColor: AppColors.blue,
         title: const Text('Etkinlikler'),
+        centerTitle: true,
+        actions: <Widget>[
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(Icons.search),
+          ),
+        ],
       ),
       body: Column(
         children: [
-          Container(
+          SizedBox(
             height: 668, // ????
-            child: Expanded(
+            child: SizedBox(
+              height: 500,
               child: ListView.builder(
                 //RefreshIndicator sayfa  yenilemeye yariyor kullanabilirsin
                 itemCount: _etkinlik.length,
@@ -40,7 +49,7 @@ class HomePage extends StatelessWidget {
         ],
       ),
       bottomNavigationBar: Container(
-        color: const Color.fromARGB(255, 141, 139, 139),
+        color: AppColors.blue,
         child: const MyIcons(), //navigation bar iconlari
       ),
     );

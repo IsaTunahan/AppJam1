@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 class MySquare extends StatelessWidget {
 //const MySquare({super.key});
   final String child;
-
   MySquare({required this.child});
 
   @override
@@ -12,12 +11,13 @@ class MySquare extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 8.0),
       child: Container(
         height: 200,
-        color: Colors.grey,
+        color: const Color.fromARGB(179, 193, 191, 191),
         child: Center(
-            child: Text(
-          child,
-          style: const TextStyle(fontSize: 10),
-        )),
+          child: Text(
+            child,
+            style: const TextStyle(fontSize: 10),
+          ),
+        ),
       ),
     );
   }
