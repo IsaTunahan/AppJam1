@@ -1,7 +1,10 @@
 import 'package:app_jam/colors.dart';
+import 'package:app_jam/pages/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:app_jam/widgetlar/_textfield.dart';
+
+import '../widgetlar/_button.dart';
 
 class LoginPage extends StatelessWidget {
   LoginPage({super.key});
@@ -49,6 +52,7 @@ class LoginPage extends StatelessWidget {
                 const SizedBox(
                   height: 15,
                 ),
+                //password
                 AppTextField(
                     controller: passwordcontroller,
                     hintText: 'Password',
@@ -64,14 +68,19 @@ class LoginPage extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: const [
-                       Text(
+                      Text(
                         'Şifrenizi mi unuttunuz?',
-                        style: TextStyle(color:AppColors.blue, fontWeight: FontWeight.w600),
+                        style: TextStyle(
+                            color: AppColors.blue, fontWeight: FontWeight.w600),
                       ),
                     ],
                   ),
                 ),
 
+                const SizedBox(
+                  height: 10,
+                ),
+                const GirisButton(),
               ],
             ),
           ),
