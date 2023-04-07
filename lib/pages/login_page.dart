@@ -1,5 +1,6 @@
 import 'package:app_jam/colors.dart';
 import 'package:app_jam/pages/home_page.dart';
+import 'package:app_jam/widgetlar/_google_giris.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:app_jam/widgetlar/_textfield.dart';
@@ -79,7 +80,6 @@ class LoginPage extends StatelessWidget {
                   ),
                 ),
 
-
                 //Giriş Yap Butonu
                 const SizedBox(
                   height: 15,
@@ -88,10 +88,9 @@ class LoginPage extends StatelessWidget {
                   onTap: signInUser(),
                 ),
                 const SizedBox(
-                  height: 35,
+                  height: 30,
                 ),
 
-                
                 // Ya da texti
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 25.0),
@@ -119,6 +118,15 @@ class LoginPage extends StatelessWidget {
                     ],
                   ),
                 ),
+
+                const SizedBox(
+                  height: 25,
+                ),
+                const GoogleGiris(
+                  imagePath: 'lib/images/google.png',
+                ),
+
+                SizedBox(height: 20,)
               ],
             ),
           ),
