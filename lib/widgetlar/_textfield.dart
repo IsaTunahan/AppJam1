@@ -34,7 +34,7 @@ class AppTextField extends StatelessWidget {
             fillColor: Colors.grey[100],
             filled: true,
             hintText: hintText,
-            hintStyle: TextStyle(color: Colors.grey[500]),
+            hintStyle: TextStyle(color: Colors.grey[600]),
           ),
         ),
       ),

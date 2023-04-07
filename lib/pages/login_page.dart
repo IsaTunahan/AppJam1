@@ -24,7 +24,7 @@ class LoginPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const SizedBox(
-                  height: 50,
+                  height: 30,
                 ),
 
                 //Logo
@@ -122,11 +122,37 @@ class LoginPage extends StatelessWidget {
                 const SizedBox(
                   height: 25,
                 ),
+
+                //google ile devam et
                 const GoogleGiris(
                   imagePath: 'lib/images/google.png',
                 ),
 
-                SizedBox(height: 20,)
+                const SizedBox(
+                  height: 25,
+                ),
+
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      'Hesabın yok mu?',
+                      style: TextStyle(color: Colors.grey[700],
+                      fontSize: 18),
+                    ),
+                    const SizedBox(width: 4),
+                    GestureDetector(
+                      child: const Text(
+                        'Kayıt ol.',
+                        style: TextStyle(
+                          color: AppColors.blue,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 18
+                        ),
+                      ),
+                    ),
+                  ],
+                )
               ],
             ),
           ),
