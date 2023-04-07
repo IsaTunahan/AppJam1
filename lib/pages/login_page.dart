@@ -1,10 +1,12 @@
 import 'package:app_jam/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
+import 'package:app_jam/widgetlar/_textfield.dart';
 
 class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+  LoginPage({super.key});
+  final emailcontroller = TextEditingController();
+  final passwordcontroller = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +17,7 @@ class LoginPage extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                SizedBox(
+                const SizedBox(
                   height: 50,
                 ),
 
@@ -24,16 +26,39 @@ class LoginPage extends StatelessWidget {
                   'lib/images/logo.ico',
                   height: 150,
                 ),
-                //Giriş yap yazısı
-                Text(
-                  'Giriş Yap',
-                  style: GoogleFonts.montserrat(
-                      textStyle: TextStyle(
-                    fontSize: 50,
-                    color: AppColors.blue,
-                    fontWeight: FontWeight.bold
-                  )),
+
+                const SizedBox(
+                  height: 20,
                 ),
+                //Giriş yap yazısı
+                const Text(
+                  'Giriş Yap',
+                  style: TextStyle(
+                      fontSize: 50,
+                      color: AppColors.blue,
+                      fontWeight: FontWeight.bold),
+                ),
+                const SizedBox(
+                  height: 30,
+                ),
+                //email
+                AppTextField(
+                    controller: emailcontroller,
+                    hintText: 'Email',
+                    obscureText: false),
+                const SizedBox(
+                  height: 15,
+                ),
+                AppTextField(
+                    controller: passwordcontroller,
+                    hintText: 'Password',
+                    obscureText: true),
+
+                const SizedBox(
+                  height: 15,
+                ),
+
+                Container()
               ],
             ),
           ),
