@@ -11,6 +11,8 @@ class LoginPage extends StatelessWidget {
   final emailcontroller = TextEditingController();
   final passwordcontroller = TextEditingController();
 
+  signInUser() {}
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -77,10 +79,46 @@ class LoginPage extends StatelessWidget {
                   ),
                 ),
 
+
+                //Giriş Yap Butonu
                 const SizedBox(
-                  height: 10,
+                  height: 15,
                 ),
-                const GirisButton(),
+                GirisButton(
+                  onTap: signInUser(),
+                ),
+                const SizedBox(
+                  height: 35,
+                ),
+
+                
+                // Ya da texti
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                  child: Row(
+                    children: [
+                      Expanded(
+                        child: Divider(
+                          thickness: 0.5,
+                          color: Colors.grey[600],
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                        child: Text(
+                          'Ya da',
+                          style: TextStyle(color: Colors.grey[800]),
+                        ),
+                      ),
+                      Expanded(
+                        child: Divider(
+                          thickness: 0.5,
+                          color: Colors.grey[600],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
               ],
             ),
           ),

@@ -1,14 +1,12 @@
+import 'package:app_jam/pages/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:app_jam/colors.dart';
 
-class GirisButton extends StatefulWidget {
-  const GirisButton({super.key});
+class GirisButton extends StatelessWidget {
+   final Function()? onTap;
+   
+  const GirisButton({super.key,required this.onTap, });
 
-  @override
-  State<GirisButton> createState() => _GirisButtonState();
-}
-
-class _GirisButtonState extends State<GirisButton> {
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -17,8 +15,14 @@ class _GirisButtonState extends State<GirisButton> {
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 25),
             child: GestureDetector(
+              onTap: onTap,
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => HomePage()),
+                  );
+                },
                 style: ElevatedButton.styleFrom(
                     backgroundColor: AppColors.red,
                     shape: RoundedRectangleBorder(
