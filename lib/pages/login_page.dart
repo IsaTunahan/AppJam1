@@ -86,6 +86,7 @@ class LoginPage extends StatelessWidget {
                 ),
                 GirisButton(
                   onTap: signInUser(),
+                  text: 'Giriş yap',
                 ),
                 const SizedBox(
                   height: 30,
