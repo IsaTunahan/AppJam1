@@ -1,6 +1,6 @@
-import 'package:app_jam/gmaps.dart';
+
 import 'package:flutter/material.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
+//import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 void main() {
   runApp(const MyApp());
@@ -73,15 +73,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               //Etkinlik ismi yazılacak
             ),
-            ElevatedButton(
-                onPressed: () async {
-                  Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) {
-                      return GMap();
-                    },
-                  ));
-                },
-                child: Text("harita")),
+            
             const SizedBox(
               height: 50,
               width: 50,
