@@ -19,11 +19,20 @@ class RegisterPageState extends State<RegisterPage> {
 
   final passwordcontroller = TextEditingController();
 
+//Firebase kayıt kısmı
   Future signUp() async {
+
+    showDialog(
+      context: context,
+      builder: (context) {
+        return const Center( child: CircularProgressIndicator());
+      },
+    );
     await FirebaseAuth.instance.createUserWithEmailAndPassword(
       email: emailcontroller.text.trim(),
       password: passwordcontroller.text.trim(),
     );
+    Navigator.of(context).pop();
   }
 
   @override
