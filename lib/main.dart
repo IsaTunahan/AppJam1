@@ -1,3 +1,4 @@
+import 'package:app_jam/bottomNavigationBar/icons.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'homepage.dart';
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
         ),
         primarySwatch: Colors.blue,
       ),
-      home: HomePage(),
+      home: MyIcons(),
     );
   }
 }
