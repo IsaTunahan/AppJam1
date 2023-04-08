@@ -1,7 +1,6 @@
 import 'package:app_jam/colors.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-
 import '../widgetlar/_button.dart';
 import '../widgetlar/_textfield.dart';
 
@@ -24,17 +23,27 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
     try {
       await FirebaseAuth.instance
           .sendPasswordResetEmail(email: emailcontroller.text.trim());
-    } on FirebaseAuthException catch (e) {
-      print(e);
       showDialog(
         context: context,
         builder: (context) {
-          return const AlertDialog(
+          return AlertDialog(
             content: Text(
                 'Şifre yenileme bağlantısı gönderildi! Lütfen emailinizi kontrol edin.'),
           );
         },
       );
+    } on FirebaseAuthException catch (e) {
+      print(e);
+      showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+            content: Text(
+                e.message.toString()),
+          );
+        },
+      );
+      
     }
   }
 
@@ -42,7 +51,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('Şifreni mi unuttun?'),
+          title: const Text('Şifreni mi unuttun?'),
           backgroundColor: AppColors.blue,
           elevation: 0,
         ),
@@ -65,40 +74,36 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                 hintText: 'Email',
                 obscureText: false,
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: 25),
-                child: Row(
-                  children: [
-                    Expanded(
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 25),
-                        child: GestureDetector(
-                          child: ElevatedButton(
-                            onPressed: () {
-                              passwordReset();
-                            },
-                            style: ElevatedButton.styleFrom(
-                                backgroundColor: AppColors.red,
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(15))),
-                            child: const Padding(
-                              padding: EdgeInsets.symmetric(vertical: 10),
-                              child: Text(
-                                'Giriş Yap',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 30,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
+              Row(
+      children: [
+        Expanded(
+          child: Padding(
+            padding: const EdgeInsets.all(25),
+            child: ElevatedButton(
+              onPressed: () {
+                passwordReset();
+              },
+              style: ElevatedButton.styleFrom(
+                  backgroundColor: AppColors.red,
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15))),
+              child: const Padding(
+                padding: EdgeInsets.symmetric(vertical: 10),
+                child: Text(
+                  'Şifreni Sıfırla',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 30,
+                  ),
                 ),
-              )
+              ),
+            ),
+          ),
+        ),
+      ],
+    ),
+
             ],
           ),
         ));

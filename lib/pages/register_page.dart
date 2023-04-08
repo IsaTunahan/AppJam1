@@ -22,18 +22,21 @@ class RegisterPageState extends State<RegisterPage> {
 //Firebase kayıt kısmı
   Future signUp() async {
 
+    //yükleme çemberi
     showDialog(
       context: context,
       builder: (context) {
-        return const Center( child: CircularProgressIndicator());
+        return  const Center(child: CircularProgressIndicator());
       },
     );
     await FirebaseAuth.instance.createUserWithEmailAndPassword(
       email: emailcontroller.text.trim(),
       password: passwordcontroller.text.trim(),
     );
+//yükleme çemberinin bitişi
     Navigator.of(context).pop();
   }
+
 
   @override
   void dispose() {
