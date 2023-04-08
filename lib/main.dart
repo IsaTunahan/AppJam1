@@ -1,7 +1,5 @@
 import 'package:app_jam/firebase_options.dart';
 import 'package:app_jam/pages/auth_page.dart';
-import 'package:app_jam/pages/login_page.dart';
-import 'package:app_jam/pages/register_page.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -11,6 +9,7 @@ void main() async{
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
 );
+
   runApp(const MyApp());
 }
 

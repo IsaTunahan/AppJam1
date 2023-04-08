@@ -1,8 +1,6 @@
+import 'package:app_jam/pages/maps_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-
-
-
 
 class HomePage extends StatelessWidget {
   HomePage({super.key});
@@ -21,7 +19,6 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.grey[900],
         actions: [
-        
           IconButton(
             onPressed: signUserOut,
             icon: const Icon(Icons.logout),
@@ -29,10 +26,27 @@ class HomePage extends StatelessWidget {
         ],
       ),
       body: Center(
-          child: Text(
-        "LOGGED IN AS: " + user.email!,
-        style: const TextStyle(fontSize: 20),
-      )),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              "LOGGED IN AS: " + user.email!,
+              style: const TextStyle(fontSize: 20),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) =>
+                          MapScreen(initialAddress: "İstanbul, Türkiye")),
+                );
+              },
+              child: Text('Harita sayfası'),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
