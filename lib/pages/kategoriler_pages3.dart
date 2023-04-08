@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
     Widget build(BuildContext context) {
       return Scaffold(
         appBar: AppBar(
-          title: Text("Etkinlik Başlıkları"),
+          title: Text("Etkinlikler"),
           centerTitle: true,
         ),
         body: Column(
@@ -43,7 +43,7 @@ class MyApp extends StatelessWidget {
             SizedBox(
               width: 10.0,
               ),
-            Text("Flutter Çalışma"),
+            Text("Flutter 📱"),
           ],
           ),
           Row(
@@ -60,7 +60,7 @@ class MyApp extends StatelessWidget {
             SizedBox(
               width: 10.0,
               ),
-            Text("Unity Çalışma"),
+            Text("Unity 🎮 "),
           ],
           ),
           Row(
@@ -77,7 +77,160 @@ class MyApp extends StatelessWidget {
             SizedBox(
               width: 10.0,
               ),
-            Text("Kahve Buluşması"),
+            Text("Oyun sanatı 🎨"),
+          ],
+          ),
+          Row(
+            children: [
+              Radio(
+                value: 4,
+                groupValue: _value,
+                onChanged: (value){
+                  setState(() {
+                    _value = 4;
+                });
+                },
+            ),
+            SizedBox(
+              width: 10.0,
+              ),
+            Text("Proje Yönetimi 💼"),
+          ],
+          ),
+          Row(
+            children: [
+              Radio(
+                value: 5,
+                groupValue: _value,
+                onChanged: (value){
+                  setState(() {
+                    _value = 5;
+                });
+                },
+            ),
+            SizedBox(
+              width: 10.0,
+              ),
+            Text("İngilizce 🇬🇧"),
+          ],
+          ),
+          Row(
+            children: [
+              Radio(
+                value: 6,
+                groupValue: _value,
+                onChanged: (value){
+                  setState(() {
+                    _value = 6;
+                });
+                },
+            ),
+            SizedBox(
+              width: 10.0,
+              ),
+            Text("Teknoloji Girişimciliği ⌨️"),
+          ],
+          ),
+          Row(
+            children: [
+              Radio(
+                value: 7,
+                groupValue: _value,
+                onChanged: (value){
+                  setState(() {
+                    _value = 7;
+                });
+                },
+            ),
+            SizedBox(
+              width: 10.0,
+              ),
+            Text("Yarışma Ekibi 🏆"),
+          ],
+          ),
+          Row(
+            children: [
+              Radio(
+                value: 8,
+                groupValue: _value,
+                onChanged: (value){
+                  setState(() {
+                    _value = 8;
+                });
+                },
+            ),
+            SizedBox(
+              width: 10.0,
+              ),
+            Text("Vize/Final Çalışması 📕"),
+          ],
+          ),
+          Row(
+            children: [
+              Radio(
+                value: 9,
+                groupValue: _value,
+                onChanged: (value){
+                  setState(() {
+                    _value = 9;
+                });
+                },
+            ),
+            SizedBox(
+              width: 10.0,
+              ),
+            Text("Kitap Okuma 📚"),
+          ],
+          ),
+          Row(
+            children: [
+              Radio(
+                value: 10,
+                groupValue: _value,
+                onChanged: (value){
+                  setState(() {
+                    _value = 10;
+                });
+                },
+            ),
+            SizedBox(
+              width: 10.0,
+              ),
+            Text("Fuar/Müze Gezisi 🦾"),
+          ],
+          ),
+          Row(
+            children: [
+              Radio(
+                value: 11,
+                groupValue: _value,
+                onChanged: (value){
+                  setState(() {
+                    _value = 11;
+                });
+                },
+            ),
+            SizedBox(
+              width: 10.0,
+              ),
+            Text("Kahve/Sohbet ☕"),
+          ],
+          ),
+          Row(
+            children: [
+              Radio(
+                value: 12,
+                groupValue: _value,
+                onChanged: (value){
+                  setState(() {
+                    _value = 12;
+                });
+                },
+            ),
+            SizedBox(
+              width: 10.0,
+              ),
+            Text("Diğer ⭐"),
           ],
          )
           ],
