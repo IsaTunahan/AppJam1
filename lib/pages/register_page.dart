@@ -1,19 +1,37 @@
 import 'package:app_jam/colors.dart';
-import 'package:app_jam/pages/home_page.dart';
 import 'package:app_jam/widgetlar/_google_giris.dart';
 import 'package:app_jam/widgetlar/kvkk.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:app_jam/widgetlar/_textfield.dart';
-
 import '../widgetlar/_button.dart';
 
-class RegisterPage extends StatelessWidget {
-  RegisterPage({super.key});
+class RegisterPage extends StatefulWidget {
+  final VoidCallback showLoginPage;
+  const RegisterPage({super.key, required this.showLoginPage});
+
+  @override
+  State<RegisterPage> createState() => _RegisterPageState();
+}
+
+class _RegisterPageState extends State<RegisterPage> {
   final emailcontroller = TextEditingController();
+
   final passwordcontroller = TextEditingController();
 
-  signInUser() {}
+  @override
+  void dispose() {
+    emailcontroller.dispose();
+    passwordcontroller.dispose();
+    super.dispose();
+  }
+
+  Future signUp() async {
+    await FirebaseAuth.instance.createUserWithEmailAndPassword(
+        email: emailcontroller.text.trim(),
+        password: passwordcontroller.text.trim());
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -87,8 +105,7 @@ class RegisterPage extends StatelessWidget {
                 const SizedBox(
                   height: 15,
                 ),
-                GirisButton(
-                  onTap: signInUser(),
+                const GirisButton(
                   text: 'Devam Et',
                 ),
                 const SizedBox(
@@ -145,6 +162,7 @@ class RegisterPage extends StatelessWidget {
                     ),
                     const SizedBox(width: 4),
                     GestureDetector(
+                      onTap: widget.showLoginPage,
                       child: const Text(
                         'Giriş yap.',
                         style: TextStyle(
