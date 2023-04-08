@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import '../colors.dart';
-import '../homepage.dart';
+import 'package:app_jam/listView.dart';
 
 class MyIcons extends StatelessWidget {
   MyIcons({super.key});

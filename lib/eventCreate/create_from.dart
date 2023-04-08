@@ -71,12 +71,15 @@ class _CreatePageState extends State<CreatePage> {
                       child: const Icon(Icons.calendar_today),
                     )),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               ElevatedButton(
                   onPressed: () {},
-                  child: Text(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: AppColors.red,
+                  ),
+                  child: const Text(
                     'Kaydet',
                     style: TextStyle(color: Colors.white),
                   )),
