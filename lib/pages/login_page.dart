@@ -1,4 +1,5 @@
 import 'package:app_jam/colors.dart';
+import 'package:app_jam/services/auth_service.dart';
 import 'package:app_jam/widgetlar/_google_giris.dart';
 import 'package:flutter/material.dart';
 import 'package:app_jam/widgetlar/_textfield.dart';
@@ -170,7 +171,8 @@ class _LoginPageState extends State<LoginPage> {
                 ),
 
                 //google ile devam et
-                const GoogleGiris(
+                 GoogleGiris(
+                  onTap: () => AuthService().signInWidthGoogle(),
                   imagePath: 'lib/images/google.png',
                 ),
 

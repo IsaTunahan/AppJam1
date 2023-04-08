@@ -4,14 +4,14 @@ class GoogleGiris extends StatelessWidget {
   final Function()? onTap;
   final String imagePath;
 
-  const GoogleGiris({super.key, required this.imagePath, this.onTap});
+  const GoogleGiris({super.key, required this.imagePath,required this.onTap});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 25),
       child: GestureDetector(
-        
+        onTap: onTap,
         child: Container(
           padding: const EdgeInsets.all(6),
           decoration: BoxDecoration(
