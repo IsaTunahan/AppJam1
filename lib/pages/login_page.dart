@@ -5,9 +5,11 @@ import 'package:app_jam/widgetlar/_textfield.dart';
 import '../widgetlar/_button.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
+import 'forgot_pw_page.dart';
+
 class LoginPage extends StatefulWidget {
   final VoidCallback ShowRegisterPage;
-  
+
   const LoginPage({super.key, required this.ShowRegisterPage});
   @override
   State<LoginPage> createState() => _LoginPageState();
@@ -18,18 +20,19 @@ class _LoginPageState extends State<LoginPage> {
 
   final passwordcontroller = TextEditingController();
 
-  Future signIn() async{
+  Future signIn() async {
     await FirebaseAuth.instance.signInWithEmailAndPassword(
-        email: emailcontroller.text.trim(),
-        password: passwordcontroller.text.trim(),
-      );
+      email: emailcontroller.text.trim(),
+      password: passwordcontroller.text.trim(),
+    );
   }
+
   @override
-      void dispose() {
-        emailcontroller.dispose();
-        passwordcontroller.dispose();
-        super.dispose();
-      }
+  void dispose() {
+    emailcontroller.dispose();
+    passwordcontroller.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -85,14 +88,28 @@ class _LoginPageState extends State<LoginPage> {
                 // Şifrenizi mi unuttunuz?
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                  child: Container(height: 20,
+                  child: Container(
+                    height: 20,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.end,
-                      children: const [
-                        Text(
-                          'Şifrenizi mi unuttunuz?',
-                          style: TextStyle(
-                              color: AppColors.blue, fontWeight: FontWeight.w600),
+                      children: [
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) {
+                                  return ForgotPasswordPage();
+                                },
+                              ),
+                            );
+                          },
+                          child: const Text(
+                            'Şifrenizi mi unuttunuz?',
+                            style: TextStyle(
+                                color: AppColors.blue,
+                                fontWeight: FontWeight.w600),
+                          ),
                         ),
                       ],
                     ),
