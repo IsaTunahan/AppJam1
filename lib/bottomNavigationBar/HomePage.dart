@@ -29,10 +29,10 @@ class MyIcons extends StatelessWidget {
         color: AppColors.blue,
         child: SafeArea(
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 15.0, vertical: 20),
+            padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 20),
             child: GNav(
               //onTabChange: (){ 'sayfadan sayfaya gitme degisikligi yapilacak yer '}
-              padding: EdgeInsets.all(16),
+              padding: const EdgeInsets.all(16),
               tabs: const [
                 GButton(
                   icon: Icons.home,

@@ -1,11 +1,6 @@
-import 'package:app_jam/eventCreate/create_from.dart';
 import 'package:app_jam/square.dart';
 import 'package:flutter/material.dart';
-import 'package:google_nav_bar/google_nav_bar.dart';
-import 'bottomNavigationBar/HomePage.dart';
-import 'package:app_jam/bottomNavigationBar/bottom_navigation_controller.dart';
 import 'colors.dart';
-import 'package:get/get.dart';
 
 class HomePage extends StatelessWidget {
   //const HomePage({super.key});

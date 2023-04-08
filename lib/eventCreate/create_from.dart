@@ -15,6 +15,20 @@ class _CreatePageState extends State<CreatePage> {
   var _createTitleController = TextEditingController();
   var _createDescriptionController = TextEditingController();
   var _createDateController = TextEditingController();
+  var _creatTimeController = TextEditingController();
+
+  TimeOfDay _timeOfDay = const TimeOfDay(hour: 8, minute: 30);
+
+  void _showTimePicker(BuildContext context) async {
+    var _pickedTime =
+        await showTimePicker(context: context, initialTime: TimeOfDay.now());
+    if (_pickedTime != null) {
+      setState(() {
+        _timeOfDay = _pickedTime;
+        _creatTimeController.text = _pickedTime.format(context).toString();
+      });
+    }
+  }
 
   DateTime _dateTime = DateTime.now();
 
@@ -63,12 +77,24 @@ class _CreatePageState extends State<CreatePage> {
                 controller: _createDateController,
                 decoration: InputDecoration(
                     labelText: 'Tarih',
-                    hintText: 'Tarih Giriniz',
+                    hintText: 'Tarih Seçiniz',
                     prefixIcon: InkWell(
                       onTap: () {
                         _selectedCreateDate(context);
                       },
                       child: const Icon(Icons.calendar_today),
+                    )),
+              ),
+              TextField(
+                controller: _creatTimeController,
+                decoration: InputDecoration(
+                    labelText: 'Saat',
+                    hintText: 'Saat Seçiniz',
+                    prefixIcon: InkWell(
+                      onTap: () {
+                        _showTimePicker(context);
+                      },
+                      child: const Icon(Icons.timer),
                     )),
               ),
               const SizedBox(
