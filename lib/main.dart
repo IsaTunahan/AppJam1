@@ -1,4 +1,5 @@
 import 'package:app_jam/bottomNavigationBar/icons.dart';
+import 'package:app_jam/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'homepage.dart';
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
         textTheme: GoogleFonts.montserratTextTheme(
           Theme.of(context).textTheme,
         ),
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.green,
       ),
       home: MyIcons(),
     );
