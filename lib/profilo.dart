@@ -13,14 +13,6 @@ class MyProfilePage extends StatefulWidget {
 }
 class _MyProfilePageState extends State<MyProfilePage> {
 
-  /*
-  String prof_et_eg = '';
-  void checkButton(String label) {
-    setState(() {
-      prof_et_eg = '$label oluştur';
-    });
-  }
-*/
   List<Widget> socialAct =[
     //Education
     my_socialact(Buttoname: 'Eğitim'),
@@ -55,8 +47,6 @@ class _MyProfilePageState extends State<MyProfilePage> {
                   ],
                 ),
               ),
-
-
             ],
           ),
         ),
