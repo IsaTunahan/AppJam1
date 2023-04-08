@@ -2,35 +2,35 @@ import 'package:app_jam/colors.dart';
 import 'package:app_jam/widgetlar/_google_giris.dart';
 import 'package:app_jam/widgetlar/kvkk.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:app_jam/widgetlar/_textfield.dart';
 import '../widgetlar/_button.dart';
 
 class RegisterPage extends StatefulWidget {
   final VoidCallback showLoginPage;
-  const RegisterPage({super.key, required this.showLoginPage});
 
+  const RegisterPage({super.key, required this.showLoginPage});
   @override
-  State<RegisterPage> createState() => _RegisterPageState();
+  State<RegisterPage> createState() => RegisterPageState();
 }
 
-class _RegisterPageState extends State<RegisterPage> {
+class RegisterPageState extends State<RegisterPage> {
   final emailcontroller = TextEditingController();
 
   final passwordcontroller = TextEditingController();
+
+  Future signUp() async {
+    await FirebaseAuth.instance.createUserWithEmailAndPassword(
+      email: emailcontroller.text.trim(),
+      password: passwordcontroller.text.trim(),
+    );
+  }
 
   @override
   void dispose() {
     emailcontroller.dispose();
     passwordcontroller.dispose();
     super.dispose();
-  }
-
-  Future signUp() async {
-    await FirebaseAuth.instance.createUserWithEmailAndPassword(
-        email: emailcontroller.text.trim(),
-        password: passwordcontroller.text.trim());
   }
 
   @override
@@ -105,8 +105,9 @@ class _RegisterPageState extends State<RegisterPage> {
                 const SizedBox(
                   height: 15,
                 ),
-                const GirisButton(
+                GirisButton(
                   text: 'Devam Et',
+                  onTap: signUp,
                 ),
                 const SizedBox(
                   height: 30,
@@ -158,7 +159,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   children: [
                     Text(
                       'Hesabın var mı?',
-                      style: TextStyle(color: Colors.grey[700], fontSize: 18),
+                      style: TextStyle(color: Colors.grey[800], fontSize: 18),
                     ),
                     const SizedBox(width: 4),
                     GestureDetector(

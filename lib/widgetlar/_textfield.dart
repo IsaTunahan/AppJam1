@@ -24,7 +24,7 @@ class AppTextField extends StatelessWidget {
             enabledBorder:  OutlineInputBorder(
               borderRadius: BorderRadius.circular(15),
               borderSide:const BorderSide(
-                color: AppColors.green,
+                color: AppColors.red,
               ),
             ),
             focusedBorder: OutlineInputBorder(

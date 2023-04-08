@@ -1,24 +1,27 @@
-import 'package:app_jam/pages/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:app_jam/colors.dart';
 
 class GirisButton extends StatelessWidget {
-   final Function()? onTap;
-   final String text;
-  const GirisButton({super.key,required this.onTap, required this.text, });
+  final Function()? onTap;
+  final String text;
+  const GirisButton({
+    super.key,
+    required this.text,
+    required this.onTap,
+  });
 
   @override
   Widget build(BuildContext context) {
-     return GestureDetector(
+    return GestureDetector(
       onTap: onTap,
       child: Container(
-        padding:const EdgeInsets.all(15),
+        padding: const EdgeInsets.all(15),
         margin: const EdgeInsets.symmetric(horizontal: 25),
         decoration: BoxDecoration(
           color: AppColors.red,
           borderRadius: BorderRadius.circular(15),
         ),
-        child:  Center(
+        child: Center(
           child: Text(
             text,
             style: const TextStyle(

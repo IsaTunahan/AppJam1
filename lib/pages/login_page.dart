@@ -1,18 +1,35 @@
 import 'package:app_jam/colors.dart';
-import 'package:app_jam/pages/home_page.dart';
 import 'package:app_jam/widgetlar/_google_giris.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:app_jam/widgetlar/_textfield.dart';
-
 import '../widgetlar/_button.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
-class LoginPage extends StatelessWidget {
-  LoginPage({super.key});
+class LoginPage extends StatefulWidget {
+  final VoidCallback ShowRegisterPage;
+  
+  const LoginPage({super.key, required this.ShowRegisterPage});
+  @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
   final emailcontroller = TextEditingController();
+
   final passwordcontroller = TextEditingController();
 
-  signInUser() {}
+  Future signIn() async{
+    await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: emailcontroller.text.trim(),
+        password: passwordcontroller.text.trim(),
+      );
+  }
+  @override
+      void dispose() {
+        emailcontroller.dispose();
+        passwordcontroller.dispose();
+        super.dispose();
+      }
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +57,7 @@ class LoginPage extends StatelessWidget {
                 const Text(
                   'Giriş Yap',
                   style: TextStyle(
-                      fontSize: 50,
+                      fontSize: 40,
                       color: AppColors.blue,
                       fontWeight: FontWeight.bold),
                 ),
@@ -58,7 +75,7 @@ class LoginPage extends StatelessWidget {
                 //password
                 AppTextField(
                     controller: passwordcontroller,
-                    hintText: 'Password',
+                    hintText: 'Şifre',
                     obscureText: true),
 
                 const SizedBox(
@@ -68,15 +85,17 @@ class LoginPage extends StatelessWidget {
                 // Şifrenizi mi unuttunuz?
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: const [
-                      Text(
-                        'Şifrenizi mi unuttunuz?',
-                        style: TextStyle(
-                            color: AppColors.blue, fontWeight: FontWeight.w600),
-                      ),
-                    ],
+                  child: Container(height: 20,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: const [
+                        Text(
+                          'Şifrenizi mi unuttunuz?',
+                          style: TextStyle(
+                              color: AppColors.blue, fontWeight: FontWeight.w600),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
 
@@ -85,8 +104,8 @@ class LoginPage extends StatelessWidget {
                   height: 15,
                 ),
                 GirisButton(
-                  onTap: signInUser(),
-                  text: 'Giriş yap',
+                  onTap: signIn,
+                  text: 'Giriş Yap',
                 ),
                 const SizedBox(
                   height: 30,
@@ -138,18 +157,17 @@ class LoginPage extends StatelessWidget {
                   children: [
                     Text(
                       'Hesabın yok mu?',
-                      style: TextStyle(color: Colors.grey[700],
-                      fontSize: 18),
+                      style: TextStyle(color: Colors.grey[700], fontSize: 18),
                     ),
                     const SizedBox(width: 4),
                     GestureDetector(
+                      onTap: widget.ShowRegisterPage,
                       child: const Text(
                         'Kayıt ol.',
                         style: TextStyle(
-                          color: AppColors.blue,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 18
-                        ),
+                            color: AppColors.blue,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18),
                       ),
                     ),
                   ],
