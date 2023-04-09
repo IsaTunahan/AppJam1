@@ -1,4 +1,4 @@
-import 'package:app_jam/bottomNavigationBar/HomePage.dart';
+import 'package:app_jam/derya/bottomNavigationBar/HomePage.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
