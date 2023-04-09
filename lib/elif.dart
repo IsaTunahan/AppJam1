@@ -245,10 +245,10 @@ class _Mesaj_sayfasiState extends State<Mesaj_sayfasi> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(),
+        appBar: AppBar(title: Text("MESAJ"),),
         body: Center(child: Column(mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Flexible(child: ListView.builder(itemCount: mesajlar.length,
+          Flexible(child: ListView.builder(reverse : true, itemCount: mesajlar.length,
           itemBuilder: (context, indexno) => Text(mesajlar[indexno]),)
           ),
           TextField(controller: t1,),
