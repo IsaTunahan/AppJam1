@@ -1,6 +1,6 @@
-import 'package:app_jam/listView_Shape.dart';
+import 'package:app_jam/derya/bottomNavigationBar/listView_Shape.dart';
 import 'package:flutter/material.dart';
-import 'colors.dart';
+import 'bottomNavigationBar/colors.dart';
 
 class ListViewPage extends StatelessWidget {
   //const HomePage({super.key});

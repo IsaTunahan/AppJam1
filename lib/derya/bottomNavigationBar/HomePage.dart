@@ -1,11 +1,11 @@
-import 'package:app_jam/bottomNavigationBar/bottom_navigation_controller.dart';
-import 'package:app_jam/eventCreate/category_Write.dart';
-import 'package:app_jam/eventCreate/eventPage.dart';
+import 'package:app_jam/derya/bottomNavigationBar/bottom_navigation_controller.dart';
+import 'package:app_jam/derya/bottomNavigationBar/eventCreate/category_Write.dart';
+import 'package:app_jam/derya/bottomNavigationBar/eventCreate/eventPage.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
-import '../colors.dart';
-import 'package:app_jam/listView.dart';
+import 'colors.dart';
+import 'package:app_jam/derya/listView.dart';
 
 class MyIcons extends StatelessWidget {
   MyIcons({super.key});

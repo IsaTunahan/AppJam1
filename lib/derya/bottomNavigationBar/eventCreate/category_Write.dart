@@ -1,4 +1,4 @@
-import 'package:app_jam/eventCreate/category_Selection.dart';
+import 'package:app_jam/derya/bottomNavigationBar/eventCreate/category_Selection.dart';
 import 'package:flutter/material.dart';
 
 class EventWritePage extends StatefulWidget {

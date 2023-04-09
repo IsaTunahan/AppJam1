@@ -1,4 +1,4 @@
-import 'package:app_jam/colors.dart';
+import 'package:app_jam/derya/bottomNavigationBar/colors.dart';
 import 'package:flutter/material.dart';
 
 class EventSelectionPage extends StatefulWidget {
