@@ -33,19 +33,19 @@ class _MyAppState extends State<MyApp> {
         ),
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(), 
+      home: const StartPage(), 
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key});
+class StartPage extends StatefulWidget {
+  const StartPage({super.key});
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<StartPage> createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _MyHomePageState extends State<StartPage> {
   @override
   Widget build(BuildContext context) {
     return AuthPage();

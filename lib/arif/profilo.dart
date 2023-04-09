@@ -92,7 +92,7 @@ class main_profilo extends StatelessWidget {
             width: 100,
             child:CircleAvatar(
               radius: 50, // set the size of the circle avatar
-              backgroundImage: AssetImage("img/isa.jpg"),
+              backgroundImage: AssetImage("lib/images/57.jpeg"),
             ),
             ),
             Positioned(
@@ -134,6 +134,7 @@ class main_profilo extends StatelessWidget {
               fontWeight :FontWeight.bold
             ),
           ),
+  
           Padding(
             padding: const EdgeInsets.only(top: 50.0),
             child: Row(
@@ -201,7 +202,7 @@ Future<void> takePhoto(ImageSource source) async {
   await imagePicker.pickImage(source: source, imageQuality: 100);
 
   pickedFile = File(pickedImage!.path);
-  signUpController.setProfileImagePath(pickedFile!.path);
+  signUpController.setProfileImagePath(pickedFile.path);
 
   Get.back();
 
