@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-class MySquare extends StatelessWidget {
+class MyShape extends StatelessWidget {
 //const MySquare({super.key});
   final String child;
-  MySquare({required this.child});
+  MyShape({required this.child});
 
   @override
   Widget build(BuildContext context) {

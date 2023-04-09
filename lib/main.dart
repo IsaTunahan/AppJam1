@@ -1,5 +1,4 @@
 import 'package:app_jam/bottomNavigationBar/HomePage.dart';
-import 'package:app_jam/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 

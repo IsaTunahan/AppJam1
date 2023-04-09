@@ -1,8 +1,8 @@
-import 'package:app_jam/square.dart';
+import 'package:app_jam/listView_Shape.dart';
 import 'package:flutter/material.dart';
 import 'colors.dart';
 
-class HomePage extends StatelessWidget {
+class ListViewPage extends StatelessWidget {
   //const HomePage({super.key});
   final List _etkinlik = [
     //firebase kaydedilen etkinliklerden buraya getiricez!!
@@ -38,7 +38,7 @@ class HomePage extends StatelessWidget {
                 itemCount: _etkinlik.length,
                 //etkinlikleri olusturdugumuz firebase den cekicez
                 itemBuilder: (context, index) {
-                  return MySquare(
+                  return MyShape(
                     child: _etkinlik[index],
                   );
                 },

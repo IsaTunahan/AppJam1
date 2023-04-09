@@ -1,17 +1,23 @@
 import 'package:app_jam/colors.dart';
+import 'package:app_jam/eventCreate/category_Selection.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 
-class CreatePage extends StatefulWidget {
-  const CreatePage({super.key});
+class EventPage extends StatefulWidget {
+  const EventPage({super.key});
 
   @override
-  State<CreatePage> createState() => _CreatePageState();
+  State<EventPage> createState() => _EventPageState();
 }
 
-class _CreatePageState extends State<CreatePage> {
+class _EventPageState extends State<EventPage> {
+  List<String> _selectedEvents = [];
+  void _addEvent(String event) {
+    setState(() {
+      _selectedEvents.add(event);
+    });
+  }
+
   var _createTitleController = TextEditingController();
   var _createDescriptionController = TextEditingController();
   var _createDateController = TextEditingController();
@@ -97,6 +103,32 @@ class _CreatePageState extends State<CreatePage> {
                       child: const Icon(Icons.timer),
                     )),
               ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  ButtonTheme(
+                    minWidth: 100.0,
+                    height: 40.0,
+                    child: IconButton(
+                      icon: Icon(Icons.arrow_forward),
+                      onPressed: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  EventSelectionPage(onEventAdded: _addEvent)),
+                        );
+                      },
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(height: 20),
+              Text(
+                'Kategori:',
+                style: TextStyle(fontSize: 20),
+              ),
+              SizedBox(height: 10),
+              ..._selectedEvents.map((event) => Text(event)),
               const SizedBox(
                 height: 20,
               ),

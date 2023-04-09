@@ -1,5 +1,6 @@
 import 'package:app_jam/bottomNavigationBar/bottom_navigation_controller.dart';
-import 'package:app_jam/eventCreate/create_from.dart';
+import 'package:app_jam/eventCreate/category_Write.dart';
+import 'package:app_jam/eventCreate/eventPage.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
@@ -19,9 +20,9 @@ class MyIcons extends StatelessWidget {
         () => IndexedStack(
           index: bottomNavigationController.selectedIndex.value,
           children: [
-            HomePage(),
-            CreatePage(),
-            HomePage(), //profil sayfasi gelecek
+            ListViewPage(),
+            EventPage(),
+            EventWritePage(), //profil sayfasi gelecek
           ],
         ),
       ),
