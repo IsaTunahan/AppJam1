@@ -1,3 +1,5 @@
+import 'package:app_jam/derya/bottomNavigationBar/HomePage.dart';
+import 'package:app_jam/elif/elif.dart';
 import 'package:app_jam/pages/maps_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -43,6 +45,28 @@ class HomePage extends StatelessWidget {
                 );
               },
               child: Text('Harita sayfası'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) =>
+                          Elif()),
+                );
+              },
+              child: Text('Elifin sayfası'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) =>
+                          MyIcons()),
+                );
+              },
+              child: Text('Deryanın sayfası'),
             ),
           ],
         ),
